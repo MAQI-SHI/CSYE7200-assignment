@@ -201,8 +201,11 @@ object Rating {
     */
   // Hint: This should similar to apply method in Object Name. The parameter of apply in case match should be same as case class Rating
   // 13 points
-  def apply(s: String): Rating = ??? // TO BE IMPLEMENTED
-
+  def apply(s: String): Rating = (for (ws <- rRating.unapplySeq(s)) yield for (w <- ws) yield Option(w))
+  match {
+    case Some(Seq(Some(first), _, maybeAge)) => apply(first, maybeAge.flatMap(_.toIntOption))
+    case x => throw ParseException(s"parse error in Age: $s")
+  } // TO BE IMPLEMENTED
 }
 
 case class ParseException(w: String) extends Exception(w)

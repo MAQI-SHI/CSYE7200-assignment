@@ -22,7 +22,8 @@ class IngestSpec extends AnyFlatSpec with Matchers {
     val xys = ingester(source).toSeq
     // check that xys has exactly one element, consisting of Success(42) -- 10 points
     // TO BE IMPLEMENTED
-    assert(xys.length == 1 && xys(0) == Success(42))
+    xys.length shouldBe 1
+    assert(xys(0) == Success(42))
   }
 
   it should "work for movie database" in {
