@@ -120,8 +120,8 @@ object Movie extends App {
     // Hint: form a new list which is consisted by the elements in list in position indices. Int* means array of Int.
     // 6 points
     val result: Seq[String] =
-    // TO BE IMPLEMENTED
     for (index <- indices) yield list(index)
+    // TO BE IMPLEMENTED
     result.toList
   }
 
