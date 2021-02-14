@@ -98,7 +98,7 @@ object Movie extends App {
       * @param w a line of input.
       * @return a Try[Movie]
       */
-    def parse(w: String): Try[Movie] = ??? // TO BE IMPLEMENTED
+    def parse(w: String): Try[Movie] = Try(apply(w.split(","))) // TO BE IMPLEMENTED
   }
 
   val ingester = new Ingest[Movie]()
@@ -121,7 +121,7 @@ object Movie extends App {
     // 6 points
     val result: Seq[String] =
     // TO BE IMPLEMENTED
-    ???
+    for (index <- indices) yield list(index)
     result.toList
   }
 
