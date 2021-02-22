@@ -66,7 +66,7 @@ case class JavaRandomState[T](n: Long, g: Long => T) extends RandomState[T] {
   def get: T = g(n) // TO BE IMPLEMENTED
   // Hint: This one need function composition.
   // 13 points
-  def map[U](f: T => U): RandomState[U] = JavaRandomState[U](n, g andThen f) // TO BE IMPLEMENTED
+  def map[U](f: T => U): RandomState[U] = JavaRandomState[U](n, g andThen(f)) // TO BE IMPLEMENTED
 }
 
 case class DoubleRandomState(n: Long) extends RandomState[Double] {
