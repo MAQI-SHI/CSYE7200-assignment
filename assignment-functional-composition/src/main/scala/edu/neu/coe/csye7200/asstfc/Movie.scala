@@ -101,8 +101,8 @@ object Movie extends App {
   //Hint: You may refer to the slides discussed in class for how to serialize object to json
   object MoviesProtocol extends DefaultJsonProtocol {
     // 20 points
+
     // TO BE IMPLEMENTED
-    ???
   }
 
   implicit object IngestibleMovie extends IngestibleMovie
