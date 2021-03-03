@@ -101,7 +101,13 @@ object Movie extends App {
   //Hint: You may refer to the slides discussed in class for how to serialize object to json
   object MoviesProtocol extends DefaultJsonProtocol {
     // 20 points
-
+    implicit val formatFormat: RootJsonFormat[Format] = jsonFormat4(Format.apply)
+    implicit val productFormat: RootJsonFormat[Production] = jsonFormat4(Production.apply)
+    implicit val nameFormat: RootJsonFormat[Name] = jsonFormat4(Name.apply)
+    implicit val ratingFormat: RootJsonFormat[Rating] = jsonFormat2(Rating.apply)
+    implicit val reviewFormat: RootJsonFormat[Reviews] = jsonFormat7(Reviews.apply)
+    implicit val principalFormat: RootJsonFormat[Principal] = jsonFormat2(Principal.apply)
+    implicit val movieFormat: RootJsonFormat[Movie] = jsonFormat11(Movie.apply)
     // TO BE IMPLEMENTED
   }
 
