@@ -91,7 +91,7 @@ object MonadOps {
   // 7 points.
   def sequence[X](xe: Either[Throwable, X]): Option[X] = xe match {
     case Left(_) => None
-    case Right(x) => Some(x)
+    case Right(xe) => Some(xe)
   } // TO BE IMPLEMENTED
 
   def zip[A, B](ao: Option[A], bo: Option[B]): Option[(A, B)] = for (a <- ao; b <- bo) yield (a, b)
