@@ -32,7 +32,7 @@ object WebCrawler extends App {
     }
     // Hint: write as a for-comprehension, using getURLContent (above) and getLinks above. You might also need MonadOps.asFuture
     // 9 points.
-    for (link <- getURLContent(u); str <- MonadOps.asFuture(getLinks(link))) yield str // TO BE IMPLEMENTED
+    for (link <- getURLContent(u); url <- MonadOps.asFuture(getLinks(link))) yield url // TO BE IMPLEMENTED
   }
 
   def wget(us: Seq[URL]): Future[Seq[Either[Throwable, Seq[URL]]]] = {
